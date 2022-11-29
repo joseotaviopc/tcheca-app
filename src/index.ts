@@ -21,11 +21,7 @@ try {
 
 app.use(express.json());
 app.use(morgan("common"));
-app.use(
-	cors({
-		origin: "*",
-	})
-);
+app.use(cors());
 
 // Routes
 app.use(userRouter);
