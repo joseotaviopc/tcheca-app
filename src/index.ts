@@ -21,7 +21,12 @@ try {
 
 app.use(express.json());
 app.use(morgan("common"));
-app.use(cors());
+app.use(
+	cors({
+		methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+		origin: ["http://localhost:3000", "http://localhost:5173/", "*"],
+	})
+);
 
 // Routes
 app.use(userRouter);
